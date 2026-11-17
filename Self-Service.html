@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#fff8e9" name="theme-color"/>
+  <title>
+   Lapak Bu Lastri &mdash; Jus Segar Setiap Hari
+  </title>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--ink:#26352c;--muted:#788078;--cream:#fff9ed;--paper:#fffdf8;--green:#356b49;--green2:#244f36;--lime:#dce9b9;--orange:#ed9b45;--line:#e9e5d9;--red:#c95d4e;--shadow:0 14px 40px #31432c12}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9bbd81;outline-offset:2px}
+.app{max-width:1280px;margin:auto;min-height:100vh;padding:0 26px 48px}.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);gap:16px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;border-radius:16px;background:#e5edcf;display:grid;place-items:center;font-size:25px}.brand h1{font:700 21px 'Playfair Display',serif;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.pill-btn{background:white;border:1px solid var(--line);padding:10px 15px;border-radius:30px;color:var(--ink);font-weight:700}.pill-btn:hover{border-color:#a9bd9b}.hero{margin:28px 0 30px;border-radius:28px;background:#eaf0d9;min-height:220px;padding:35px 42px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.hero:after{content:'🍊';font-size:150px;position:absolute;right:8%;opacity:.88;transform:rotate(-14deg)}.hero-copy{max-width:550px;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:800}.hero h2{font:800 clamp(30px,4vw,46px) 'Playfair Display',serif;line-height:1.1;margin:12px 0}.hero p{color:#5f6c5e;max-width:430px;line-height:1.7;margin:0}.hero-tag{display:inline-block;margin-top:17px;background:#fffdf3;padding:8px 13px;border-radius:20px;color:var(--green);font-weight:700;font-size:12px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:28px 0 17px}.section-head h2{font:700 25px 'Playfair Display',serif;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.search{flex:1;min-width:190px;max-width:310px;border:1px solid var(--line);background:white;border-radius:14px;padding:11px 14px}.category{padding:10px 15px;border-radius:24px;background:white;border:1px solid var(--line);color:#687267;font-weight:700;font-size:13px}.category.active{background:var(--green);color:white;border-color:var(--green)}.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s;box-shadow:0 5px 18px #26352c06}.product:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.product-art{height:145px;display:grid;place-items:center;font-size:70px;background:linear-gradient(145deg,#f5f1df,#e8efdc);position:relative}.product-art small{position:absolute;left:12px;top:12px;background:#fffdf0;border-radius:20px;padding:5px 9px;font-size:10px;color:var(--green);font-weight:800}.product-info{padding:15px}.product-info h3{font-size:16px;margin:0 0 5px}.product-info p{font-size:12px;color:var(--muted);line-height:1.5;min-height:36px;margin:0 0 13px}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-weight:800;color:var(--green)}.add{width:36px;height:36px;border-radius:12px;background:var(--green);color:white;font-size:22px}.add:disabled{background:#c8cec4;cursor:not-allowed}
+.cart-fab{position:fixed;right:26px;bottom:24px;z-index:5;background:var(--green);color:white;padding:15px 20px;border-radius:18px;box-shadow:0 10px 30px #244f3640;display:none;font-weight:800}.cart-fab.show{display:flex;gap:12px;align-items:center}.cart-count{background:#fff;color:var(--green);border-radius:20px;padding:3px 8px}
+footer{text-align:center;color:#8a9086;font-size:12px;padding:45px 0 5px}
+dialog{border:0;border-radius:24px;padding:0;width:min(560px,calc(100% - 28px));max-height:88vh;overflow:auto;box-shadow:0 25px 90px #1c2c1c35;color:var(--ink)}dialog::backdrop{background:#17251dcc;backdrop-filter:blur(4px)}.modal-head{padding:22px 24px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--paper);z-index:2}.modal-head h2{font:700 23px 'Playfair Display',serif;margin:0}.x{background:#f1f0e8;border-radius:50%;width:34px;height:34px;font-size:20px}.modal-body{padding:20px 24px 24px}.field{display:grid;gap:7px;margin-bottom:15px}.field label{font-size:12px;font-weight:800;color:#59665a}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;color:var(--ink)}.field textarea{resize:vertical}.btn{padding:12px 17px;border-radius:13px;font-weight:800}.primary{background:var(--green);color:white}.primary:hover{background:var(--green2)}.soft{background:#edf1e4;color:var(--green)}.danger{background:#fae9e5;color:var(--red)}.wide{width:100%}.muted{color:var(--muted);font-size:12px;line-height:1.6}.cart-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row strong{display:block;font-size:14px}.qty{display:flex;align-items:center;gap:8px}.qty button{width:27px;height:27px;border-radius:9px;background:#edf1e4;color:var(--green);font-weight:900}.total-line{display:flex;justify-content:space-between;padding:9px 0}.grand{font-size:18px;font-weight:800;border-top:1px dashed var(--line);margin-top:8px;padding-top:15px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{background:#f0f1e8;color:#52634e;border-radius:20px;padding:7px 10px;font-size:11px;font-weight:700}.success{text-align:center;padding:28px 10px}.success .emoji{font-size:55px}.success h2{font:700 25px 'Playfair Display',serif}.ticket{background:#f7f5eb;border-radius:14px;padding:15px;text-align:left;margin:18px 0}.ticket-line{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+.admin-wrap{display:none}.admin-wrap.open{display:block}.customer-wrap.hidden{display:none}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 20px}.admin-head h2{font:700 27px 'Playfair Display',serif;margin:0}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.tab{padding:10px 14px;border-radius:12px;background:white;border:1px solid var(--line);font-weight:700;color:#69736a}.tab.active{background:var(--green);color:white}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}.stat{background:white;border:1px solid var(--line);border-radius:17px;padding:17px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:23px;margin-top:8px;color:var(--green)}.panel{background:white;border:1px solid var(--line);border-radius:19px;padding:19px;overflow:auto}.panel h3{margin:0 0 14px;font-size:16px}.table{width:100%;border-collapse:collapse;min-width:650px}.table th,.table td{text-align:left;padding:12px 10px;border-bottom:1px solid #eeece4;font-size:12px}.table th{color:#7b847a;background:#faf9f4}.status{display:inline-block;border-radius:20px;padding:5px 9px;font-size:10px;font-weight:800;background:#edf1e4;color:var(--green)}.status.proses{background:#fff0dc;color:#a76b22}.status.selesai{background:#e4f1e6;color:#39744b}.status.batal{background:#fae9e5;color:#b44f43}.admin-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:13px;flex-wrap:wrap}.admin-toolbar input{border:1px solid var(--line);border-radius:10px;padding:10px}.empty{text-align:center;padding:34px;color:var(--muted)}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#26352c;color:white;padding:12px 17px;border-radius:13px;z-index:20;font-size:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.menu-grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.hero:after{right:2%;opacity:.45}}
+@media(max-width:620px){.app{padding:0 15px 35px}.topbar{padding:15px 0}.brand h1{font-size:18px}.brand-mark{width:40px;height:40px}.hero{padding:26px 22px;min-height:210px}.hero:after{font-size:100px;right:-5%;bottom:0}.hero h2{font-size:32px}.menu-grid{grid-template-columns:repeat(2,1fr);gap:10px}.product-art{height:115px;font-size:55px}.product-info{padding:12px}.product-info h3{font-size:14px}.product-info p{font-size:11px}.section-head h2{font-size:22px}.search{max-width:none;flex-basis:100%}.cart-fab{right:15px;bottom:15px}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:19px}.admin-head{align-items:flex-start;flex-direction:column}}
+
+.qris-card{margin:16px 0;padding:18px 14px;text-align:center;background:#f7f8ef;border:1px solid #dfe7d3;border-radius:18px}
+.qris-title{font:700 20px 'Playfair Display',serif;margin-bottom:8px;color:var(--green)}
+.qris-image-wrap{width:min(250px,75vw);aspect-ratio:1;margin:0 auto 10px;background:white;border:1px solid var(--line);border-radius:16px;padding:10px;display:grid;place-items:center}
+.qris-image-wrap img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:620px){
+ body{background:#fff9ed}
+ .app{width:100%;max-width:480px;padding:0 14px 90px;margin:0 auto}
+ .topbar{position:sticky;top:0;z-index:4;background:#fff9ed}
+ .hero{min-height:190px;margin:18px 0 24px;border-radius:22px}
+ .hero h2{font-size:30px}
+ .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ dialog{width:calc(100% - 16px);max-width:440px;max-height:calc(100dvh - 16px);border-radius:20px}
+ .modal-head{padding:17px 18px 13px}
+ .modal-body{padding:16px 18px 20px}
+ .field{margin-bottom:13px}
+ .field input,.field select,.field textarea{font-size:16px;min-height:44px}
+ .field textarea{min-height:82px}
+ .btn.wide{min-height:48px}
+ .qris-card{padding:16px 12px}
+ .qris-image-wrap{width:min(245px,72vw)}
+ .cart-fab{left:14px;right:14px;bottom:14px;justify-content:center}
+}
+
+
+/* FORCE PORTRAIT: keep the whole app in a phone-width column on every screen */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  overflow-x: hidden;
+  background: #f0f1e9;
+}
+.app {
+  width: 100% !important;
+  max-width: 480px !important;
+  min-height: 100vh;
+  margin: 0 auto !important;
+  padding: 0 14px 92px !important;
+  background: var(--cream);
+  box-shadow: 0 0 35px rgba(38,53,44,.08);
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  background: var(--cream);
+}
+.hero {
+  min-height: 190px;
+  padding: 25px 20px;
+  margin: 18px 0 24px;
+  border-radius: 22px;
+}
+.hero h2 { font-size: 30px; }
+.menu-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px;
+}
+.product-art { height: 118px; }
+.product-info { padding: 12px; }
+.product-info h3 { font-size: 14px; }
+.product-info p { font-size: 11px; }
+dialog {
+  width: calc(100% - 20px) !important;
+  max-width: 440px !important;
+  max-height: calc(100dvh - 20px) !important;
+  border-radius: 20px;
+}
+.modal-head { padding: 17px 18px 13px; }
+.modal-body { padding: 16px 18px 20px; }
+.field input, .field select, .field textarea {
+  min-height: 44px;
+  font-size: 16px;
+}
+.field textarea { min-height: 82px; }
+.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.admin-head { align-items: flex-start; flex-direction: column; }
+.cart-fab {
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  justify-content: center;
+}
+.qris-card { padding: 16px 12px; }
+.qris-image-wrap { width: min(245px, 72vw); }
+@media (min-width: 481px) {
+  body { padding: 0; }
+}
+
+
+/* Compact portrait proportions: reduce excessive vertical length */
+.app { padding-bottom: 70px !important; }
+.topbar { padding: 13px 0 !important; }
+.brand-mark { width: 38px; height: 38px; border-radius: 13px; font-size: 21px; }
+.brand h1 { font-size: 18px; }
+.hero {
+  min-height: 150px !important;
+  padding: 19px 18px !important;
+  margin: 13px 0 19px !important;
+}
+.hero h2 { font-size: 26px !important; margin: 8px 0 !important; }
+.hero p { font-size: 12px; line-height: 1.5; }
+.hero-tag { margin-top: 10px; padding: 6px 10px; font-size: 10px; }
+.section-head { margin: 20px 0 12px !important; }
+.section-head h2 { font-size: 21px !important; }
+.filters { gap: 7px !important; margin-bottom: 12px !important; }
+.search { padding: 9px 12px !important; }
+.category { padding: 8px 12px !important; font-size: 12px !important; }
+.menu-grid { gap: 9px !important; }
+.product-art { height: 96px !important; font-size: 48px !important; }
+.product-art small { top: 8px; left: 8px; padding: 4px 7px; font-size: 9px; }
+.product-info { padding: 10px !important; }
+.product-info h3 { font-size: 13px !important; margin-bottom: 3px !important; }
+.product-info p { min-height: 30px !important; font-size: 10px !important; line-height: 1.35 !important; margin-bottom: 8px !important; }
+.add { width: 31px !important; height: 31px !important; }
+footer { padding: 28px 0 3px !important; }
+.modal-head { padding: 14px 16px 10px !important; }
+.modal-head h2 { font-size: 20px !important; }
+.modal-body { padding: 13px 16px 16px !important; }
+.field { gap: 5px !important; margin-bottom: 10px !important; }
+.field label { font-size: 11px !important; }
+.field input, .field select { min-height: 39px !important; padding: 9px 11px !important; }
+.field textarea { min-height: 65px !important; padding: 9px 11px !important; }
+.qris-card { padding: 12px 10px !important; margin: 10px 0 !important; }
+.qris-title { font-size: 17px !important; }
+.qris-image-wrap { width: min(205px, 64vw) !important; }
+.btn { padding: 10px 14px !important; }
+.btn.wide { min-height: 43px !important; }
+  </style>
+ </head>
+ <body>
+  <div class="app">
+   <header class="topbar">
+    <div class="brand">
+     <div class="brand-mark">
+      🍹
+     </div>
+     <div>
+      <h1>
+       Lapak Bu Lastri
+      </h1>
+      <p>
+       Segarnya bikin nagih &middot; Dibuat saat dipesan
+      </p>
+     </div>
+    </div>
+    <div class="top-actions">
+     <button class="pill-btn" id="adminToggle">
+      ⚙ Admin
+     </button>
+    </div>
+   </header>
+   <section class="customer-wrap" id="customerView">
+    <section class="hero">
+     <div class="hero-copy">
+      <div class="eyebrow">
+       SEGER &bull; ASLI &bull; PENUH RASA
+      </div>
+      <h2>
+       Hari yang baik
+       <br/>
+       dimulai dari yang segar.
+      </h2>
+      <p>
+       Pilih jus favoritmu, nanti kami siapkan dengan buah pilihan. Sederhana, segar, dan dibuat sepenuh hati.
+      </p>
+      <span class="hero-tag">
+       🍃 Buah pilihan, dibuat fresh setiap hari
+      </span>
+     </div>
+    </section>
+    <div class="section-head">
+     <div>
+      <h2>
+       Menu hari ini
+      </h2>
+      <p>
+       Lagi pengin yang manis, asam, atau menyegarkan?
+      </p>
+     </div>
+    </div>
+    <div class="filters">
+     <input class="search" id="searchMenu" placeholder="Cari jus favoritmu..."/>
+     <div class="filters" id="categories" style="margin:0">
+     </div>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+    </div>
+    <footer>
+     Terima kasih sudah mampir ke Lapak Bu Lastri 💚
+     <br/>
+     Semoga harimu jadi lebih segar.
+    </footer>
+   </section>
+   <section class="admin-wrap" id="adminView">
+    <div class="admin-head">
+     <div>
+      <div class="eyebrow">
+       RUANG PENGELOLA
+      </div>
+      <h2>
+       Halo, Bu Lastri 👋
+      </h2>
+      <p class="muted">
+       Yuk, kita lihat bagaimana lapak hari ini.
+      </p>
+     </div>
+     <button class="btn soft" id="backCustomer">
+      &larr; Tampilan pelanggan
+     </button>
+    </div>
+    <nav class="tabs" id="adminTabs">
+     <button class="tab active" data-tab="dashboard">
+      Ringkasan
+     </button>
+     <button class="tab" data-tab="orders">
+      Pesanan
+     </button>
+     <button class="tab" data-tab="products">
+      Menu &amp; stok
+     </button>
+     <button class="tab" data-tab="reports">
+      Laporan
+     </button>
+     <button class="tab" data-tab="settings">
+      Pengaturan
+     </button>
+    </nav>
+    <div id="adminPanel">
+    </div>
+   </section>
+  </div>
+  <button class="cart-fab" id="cartButton">
+   🛒 Keranjang
+   <span class="cart-count" id="cartCount">
+    0
+   </span>
+   <span id="cartTotal">
+    Rp0
+   </span>
+  </button>
+  <dialog id="cartDialog">
+   <div class="modal-head">
+    <h2>
+     Keranjangmu
+    </h2>
+    <button class="x" data-close="cartDialog">
+     &times;
+    </button>
+   </div>
+   <div class="modal-body" id="cartBody">
+   </div>
+  </dialog>
+  <dialog id="checkoutDialog">
+   <div class="modal-head">
+    <h2>
+     Selesaikan pesanan
+    </h2>
+    <button class="x" data-close="checkoutDialog">
+     &times;
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="field">
+     <label>
+      Nama pemesan
+     </label>
+     <input id="customerName" maxlength="40" placeholder="Nama kamu"/>
+    </div>
+    <div class="field">
+     <label>
+      Catatan untuk pesanan
+     </label>
+     <textarea id="customerNote" maxlength="160" placeholder="Contoh: esnya sedikit saja, ya." rows="2"></textarea>
+     <div class="chips">
+      <button class="chip" data-note="Gula dikurangi">
+       Gula dikurangi
+      </button>
+      <button class="chip" data-note="Tanpa gula">
+       Tanpa gula
+      </button>
+      <button class="chip" data-note="Es sedikit">
+       Es sedikit
+      </button>
+      <button class="chip" data-note="Tanpa es">
+       Tanpa es
+      </button>
+     </div>
+    </div>
+    <div class="field">
+     <label>
+      Metode pembayaran
+     </label>
+     <select id="paymentMethod">
+      <option value="Tunai">
+       Tunai
+      </option>
+      <option value="QRIS">
+       QRIS
+      </option>
+     </select>
+    </div>
+    <div class="qris-card" id="qrisPreview" style="display:none">
+     <div class="qris-title">
+      Pembayaran QRIS
+     </div>
+     <div class="qris-image-wrap">
+      <img alt="QRIS resmi Lapak Bu Lastri" id="qrisImage"/>
+     </div>
+     <a class="btn soft" download="Contoh_QR_Lapak_Bu_Lastri_DEMO.png" href="data:image/png;base64,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" id="downloadSampleQris" style="display:inline-block;text-decoration:none;margin-top:5px">
+      Unduh contoh QR
+     </a>
+    </div>
+    <div class="muted" id="checkoutSummary">
+    </div>
+    <button class="btn primary wide" id="placeOrder">
+     Buat pesanan
+    </button>
+   </div>
+  </dialog>
+  <dialog id="receiptDialog">
+   <div class="modal-head">
+    <h2>
+     Pesanan berhasil dibuat
+    </h2>
+    <button class="x" data-close="receiptDialog">
+     &times;
+    </button>
+   </div>
+   <div class="modal-body" id="receiptBody">
+   </div>
+  </dialog>
+  <dialog id="pinDialog">
+   <div class="modal-head">
+    <h2>
+     Masuk sebagai admin
+    </h2>
+    <button class="x" data-close="pinDialog">
+     &times;
+    </button>
+   </div>
+   <div class="modal-body">
+    <p class="muted">
+     Masukkan PIN admin untuk membuka pengelolaan lapak.
+    </p>
+    <div class="field">
+     <label>
+      PIN
+     </label>
+     <input id="adminPin" inputmode="numeric" maxlength="8" placeholder="PIN admin" type="password"/>
+    </div>
+    <button class="btn primary wide" id="pinSubmit">
+     Masuk
+    </button>
+    <p class="muted">
+     PIN awal:
+     <b>
+      1234
+     </b>
+     . Bisa diganti melalui pengaturan.
+    </p>
+   </div>
+  </dialog>
+  <dialog id="productDialog">
+   <div class="modal-head">
+    <h2 id="productDialogTitle">
+     Tambah menu
+    </h2>
+    <button class="x" data-close="productDialog">
+     &times;
+    </button>
+   </div>
+   <div class="modal-body">
+    <input id="editProductId" type="hidden"/>
+    <div class="field">
+     <label>
+      Nama menu
+     </label>
+     <input id="pName" maxlength="45" placeholder="Contoh: Jus Mangga"/>
+    </div>
+    <div class="field">
+     <label>
+      Kategori
+     </label>
+     <select id="pCategory">
+      <option>
+       Buah
+      </option>
+      <option>
+       Sayur
+      </option>
+      <option>
+       Favorit
+      </option>
+      <option>
+       Minuman lain
+      </option>
+     </select>
+    </div>
+    <div class="field">
+     <label>
+      Emoji menu
+     </label>
+     <input id="pEmoji" maxlength="4" value="🥭"/>
+    </div>
+    <div class="field">
+     <label>
+      Deskripsi
+     </label>
+     <input id="pDesc" maxlength="100" placeholder="Segar, manis alami..."/>
+    </div>
+    <div class="field">
+     <label>
+      Harga jual (Rp)
+     </label>
+     <input id="pPrice" min="0" type="number"/>
+    </div>
+    <div class="field">
+     <label>
+      Modal per porsi (Rp)
+     </label>
+     <input id="pCost" min="0" type="number"/>
+    </div>
+    <div class="field">
+     <label>
+      Stok tersedia
+     </label>
+     <input id="pStock" min="0" type="number"/>
+    </div>
+    <button class="btn primary wide" id="saveProduct">
+     Simpan menu
+    </button>
+   </div>
+  </dialog>
+  <div class="toast" id="toast" role="status">
+  </div>
+  <script>
+   const money = n => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(Number(n) || 0);
+const seedProducts = [
+    { id: 1, name: 'Jus Alpukat', category: 'Buah', emoji: '🥑', desc: 'Lembut dan creamy, favorit banyak orang.', price: 15000, cost: 8000, stock: 18 },
+    { id: 2, name: 'Jus Mangga', category: 'Buah', emoji: '🥭', desc: 'Manis segar dari mangga pilihan.', price: 13000, cost: 6500, stock: 20 },
+    { id: 3, name: 'Jus Jeruk', category: 'Buah', emoji: '🍊', desc: 'Rasa citrus yang segar dan ringan.', price: 10000, cost: 4500, stock: 25 },
+    { id: 4, name: 'Jus Stroberi', category: 'Buah', emoji: '🍓', desc: 'Perpaduan manis dan sedikit asam.', price: 14000, cost: 7000, stock: 14 },
+    { id: 5, name: 'Jus Buah Naga', category: 'Buah', emoji: '🍉', desc: 'Segar dengan warna cantik alami.', price: 12000, cost: 5500, stock: 16 },
+    { id: 6, name: 'Jus Wortel', category: 'Sayur', emoji: '🥕', desc: 'Pilihan ringan dengan rasa khas wortel.', price: 11000, cost: 5000, stock: 12 },
+    { id: 7, name: 'Jus Jambu', category: 'Buah', emoji: '🍐', desc: 'Lembut, segar, dan nikmat diminum dingin.', price: 11000, cost: 5000, stock: 15 },
+    { id: 8, name: 'Jus Melon', category: 'Buah', emoji: '🍈', desc: 'Rasa manis lembut yang menyegarkan.', price: 12000, cost: 5500, stock: 13 }
+];
+const load = (key, fallback) => {
+    try {
+        return JSON.parse(localStorage.getItem(key)) ?? fallback;
+    }
+    catch {
+        return fallback;
+    }
+};
+let products = load('lastri_products', seedProducts), orders = load('lastri_orders', []), cart = {}, activeCategory = 'Semua', adminTab = 'dashboard', pin = load('lastri_pin', '1234'), qrisImage = load('lastri_qris_image', 'data:image/png;base64,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');
+const save = () => { localStorage.setItem('lastri_products', JSON.stringify(products)); localStorage.setItem('lastri_orders', JSON.stringify(orders)); localStorage.setItem('lastri_pin', JSON.stringify(pin)); };
+const $ = id => document.getElementById(id);
+function toast(msg) { $('toast').textContent = msg; $('toast').classList.add('show'); setTimeout(() => $('toast').classList.remove('show'), 2400); }
+function openDialog(id) { $(id).showModal(); }
+function closeDialog(id) { $(id).close(); }
+document.addEventListener('click', e => {
+    const b = e.target.closest('[data-close]');
+    if (b)
+        closeDialog(b.dataset.close);
+});
+function categories() { let cats = ['Semua', ...new Set(products.map(p => p.category))]; $('categories').innerHTML = cats.map(c => `<button class="category ${activeCategory === c ? 'active' : ''}" data-category="${c}">${c}</button>`).join(''); }
+function renderMenu() { categories(); let q = $('searchMenu').value.toLowerCase(); let list = products.filter(p => (activeCategory === 'Semua' || p.category === activeCategory) && (p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q))); $('menuGrid').innerHTML = list.length ? list.map(p => `<article class="product"><div class="product-art"><small>${p.stock > 0 ? 'FRESH HARI INI' : 'STOK HABIS'}</small>${p.emoji}</div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" data-add="${p.id}" ${p.stock < 1 ? 'disabled' : ''} aria-label="Tambah ${esc(p.name)}">${p.stock < 1 ? '–' : '+'}</button></div></div></article>`).join('') : '<div class="empty" style="grid-column:1/-1">Belum ketemu menu yang cocok. Coba kata kunci lain, ya.</div>'; }
+function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+function cartItems() { return Object.entries(cart).map(([id, qty]) => ({ p: products.find(p => p.id === Number(id)), qty })).filter(x => x.p); }
+function cartSum() { return cartItems().reduce((s, x) => s + x.p.price * x.qty, 0); }
+function updateCart() { let count = Object.values(cart).reduce((a, b) => a + b, 0); $('cartCount').textContent = count; $('cartTotal').textContent = money(cartSum()); $('cartButton').classList.toggle('show', count > 0); }
+function renderCart() { let items = cartItems(); $('cartBody').innerHTML = items.length ? items.map(({ p, qty }) => `<div class="cart-row"><div><strong>${p.emoji} ${esc(p.name)}</strong><span class="muted">${money(p.price)} / gelas</span><div><button class="chip" data-remove="${p.id}">Hapus</button></div></div><div style="text-align:right"><b>${money(p.price * qty)}</b><div class="qty" style="margin-top:8px"><button data-qty="${p.id}" data-delta="-1">−</button><b>${qty}</b><button data-qty="${p.id}" data-delta="1">+</button></div></div></div>`).join('') + `<div class="total-line grand"><span>Total</span><span>${money(cartSum())}</span></div><button class="btn primary wide" style="margin-top:14px" id="goCheckout">Lanjut ke checkout</button>` : '<div class="empty">Keranjangmu masih kosong 🍹<br>Yuk, pilih jus yang kamu suka.</div>'; }
+$('menuGrid').addEventListener('click', e => {
+    let b = e.target.closest('[data-add]');
+    if (!b)
+        return;
+    let id = Number(b.dataset.add), p = products.find(x => x.id === id);
+    if (!p || p.stock < 1)
+        return;
+    cart[id] = (cart[id] || 0) + 1;
+    updateCart();
+    toast(p.name + ' ditambahkan ke keranjang');
+});
+$('categories').addEventListener('click', e => {
+    let b = e.target.closest('[data-category]');
+    if (b) {
+        activeCategory = b.dataset.category;
+        renderMenu();
+    }
+});
+$('searchMenu').addEventListener('input', renderMenu);
+$('cartButton').onclick = () => { renderCart(); openDialog('cartDialog'); };
+$('cartBody').addEventListener('click', e => {
+    let q = e.target.closest('[data-qty]'), r = e.target.closest('[data-remove]');
+    if (q) {
+        let id = q.dataset.qty;
+        cart[id] = (cart[id] || 0) + Number(q.dataset.delta);
+        if (cart[id] <= 0)
+            delete cart[id];
+        updateCart();
+        renderCart();
+    }
+    if (r) {
+        delete cart[r.dataset.remove];
+        updateCart();
+        renderCart();
+    }
+    if (e.target.id === 'goCheckout') {
+        closeDialog('cartDialog');
+        showCheckout();
+    }
+});
+function updateQrisPreview() {
+    const show = $('paymentMethod').value === 'QRIS';
+    $('qrisPreview').style.display = show ? 'block' : 'none';
+    if (show) {
+        if (qrisImage) {
+            $('qrisImage').src = qrisImage;
+            $('qrisImage').style.display = 'block';
+            $('qrisImage').parentElement.style.display = 'grid';
+        }
+        else {
+            $('qrisImage').removeAttribute('src');
+            $('qrisImage').style.display = 'none';
+            $('qrisImage').parentElement.style.display = 'none';
+        }
+    }
+}
+$('paymentMethod').addEventListener('change', updateQrisPreview);
+function showCheckout() {
+    if (!cartItems().length)
+        return;
+    let total = cartSum();
+    $('checkoutSummary').innerHTML = `<div class="total-line"><span>${cartItems().reduce((a, x) => a + x.qty, 0)} gelas jus</span><b>${money(total)}</b></div>`;
+    updateQrisPreview();
+    openDialog('checkoutDialog');
+}
+$('placeOrder').onclick = () => {
+    let name = $('customerName').value.trim();
+    if (!name) {
+        toast('Isi nama dulu, ya.');
+        $('customerName').focus();
+        return;
+    }
+    let items = cartItems();
+    if (!items.length)
+        return;
+    for (let x of items) {
+        if (x.qty > x.p.stock) {
+            toast('Stok ' + x.p.name + ' tidak mencukupi.');
+            return;
+        }
+    }
+    let order = { id: 'BL' + Date.now().toString().slice(-7), name, note: $('customerNote').value.trim(), payment: $('paymentMethod').value, items: items.map(x => ({ id: x.p.id, name: x.p.name, emoji: x.p.emoji, qty: x.qty, price: x.p.price, cost: x.p.cost })), total: cartSum(), status: 'Menunggu', time: new Date().toISOString() };
+    items.forEach(x => x.p.stock -= x.qty);
+    orders.unshift(order);
+    cart = {};
+    save();
+    updateCart();
+    closeDialog('checkoutDialog');
+    renderMenu();
+    showReceipt(order);
+};
+function showReceipt(o) { $('receiptBody').innerHTML = `<div class="success"><div class="emoji">🍹</div><h2>Makasih, ${esc(o.name)}!</h2><p class="muted">Pesananmu sudah masuk ke Lapak Bu Lastri. Tunggu sebentar, ya.</p></div><div class="ticket"><div class="ticket-line"><b>Nomor pesanan</b><b>${o.id}</b></div><div class="ticket-line"><span>Waktu</span><span>${new Date(o.time).toLocaleString('id-ID')}</span></div><hr>${o.items.map(x => `<div class="ticket-line"><span>${x.emoji} ${esc(x.name)} × ${x.qty}</span><b>${money(x.price * x.qty)}</b></div>`).join('')}<hr><div class="ticket-line"><b>Total</b><b>${money(o.total)}</b></div><div class="ticket-line"><span>Pembayaran</span><span>${o.payment}</span></div><div class="ticket-line"><span>Status</span><span>${o.status}</span></div></div><button class="btn primary wide" id="doneReceipt">Kembali ke menu</button>`; openDialog('receiptDialog'); $('doneReceipt').onclick = () => closeDialog('receiptDialog'); }
+document.querySelectorAll('[data-note]').forEach(b => b.onclick = () => { $('customerNote').value = ($('customerNote').value ? $('customerNote').value + ', ' : '') + b.dataset.note; });
+$('adminToggle').onclick = () => openDialog('pinDialog');
+$('pinSubmit').onclick = () => {
+    if ($('adminPin').value === String(pin)) {
+        closeDialog('pinDialog');
+        $('customerView').classList.add('hidden');
+        $('adminView').classList.add('open');
+        $('cartButton').classList.remove('show');
+        renderAdmin();
+    }
+    else
+        toast('PIN belum cocok. Coba lagi, ya.');
+    $('adminPin').value = '';
+};
+$('backCustomer').onclick = () => { $('adminView').classList.remove('open'); $('customerView').classList.remove('hidden'); renderMenu(); };
+$('adminTabs').onclick = e => {
+    let b = e.target.closest('[data-tab]');
+    if (!b)
+        return;
+    adminTab = b.dataset.tab;
+    renderAdmin();
+};
+function stats() { let today = new Date().toDateString(), todayOrders = orders.filter(o => new Date(o.time).toDateString() === today && o.status !== 'Batal'), revenue = todayOrders.reduce((a, o) => a + o.total, 0), profit = todayOrders.reduce((a, o) => a + o.items.reduce((s, i) => s + (i.price - i.cost) * i.qty, 0), 0); return { todayOrders, revenue, profit }; }
+function renderAdmin() {
+    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === adminTab));
+    let s = stats(), p = $('adminPanel');
+    if (adminTab === 'dashboard') {
+        p.innerHTML = `<div class="stats"><div class="stat"><span>Pesanan hari ini</span><strong>${s.todayOrders.length}</strong></div><div class="stat"><span>Omzet hari ini</span><strong>${money(s.revenue)}</strong></div><div class="stat"><span>Perkiraan laba kotor</span><strong>${money(s.profit)}</strong></div><div class="stat"><span>Menu tersedia</span><strong>${products.length}</strong></div></div><div class="panel"><h3>Perlu diperhatikan</h3>${orders.filter(o => o.status === 'Menunggu' || o.status === 'Diproses').length ? `<p>Ada <b>${orders.filter(o => o.status === 'Menunggu' || o.status === 'Diproses').length} pesanan</b> yang perlu ditangani.</p>` : '<p class="muted">Belum ada pesanan yang menunggu. Semangat menjalankan lapaknya! 🌿</p>'}<button class="btn primary" data-goto="orders">Lihat pesanan</button></div><div class="panel" style="margin-top:14px"><h3>Stok yang mulai menipis</h3>${products.filter(x => x.stock <= 5).length ? products.filter(x => x.stock <= 5).map(x => `<p>${x.emoji} ${esc(x.name)} — tersisa <b>${x.stock}</b></p>`).join('') : '<p class="muted">Stok menu masih aman.</p>'}</div>`;
+    }
+    if (adminTab === 'orders') {
+        p.innerHTML = `<div class="panel"><div class="admin-toolbar"><h3>Daftar pesanan</h3><input id="orderSearch" placeholder="Cari nama / nomor pesanan..."></div><div id="ordersTable">${ordersTable(orders)}</div></div>`;
+    }
+    if (adminTab === 'products') {
+        p.innerHTML = `<div class="panel"><div class="admin-toolbar"><h3>Menu dan persediaan</h3><button class="btn primary" id="addProduct">+ Tambah menu</button></div><table class="table"><thead><tr><th>Menu</th><th>Harga</th><th>Modal</th><th>Stok</th><th>Aksi</th></tr></thead><tbody>${products.map(x => `<tr><td>${x.emoji} <b>${esc(x.name)}</b><br><span class="muted">${esc(x.category)}</span></td><td>${money(x.price)}</td><td>${money(x.cost)}</td><td>${x.stock}</td><td><button class="chip" data-edit="${x.id}">Edit</button> <button class="chip" data-stock="${x.id}">+ Stok</button> <button class="chip" data-delete="${x.id}">Hapus</button></td></tr>`).join('')}</tbody></table></div>`;
+    }
+    if (adminTab === 'reports') {
+        let total = orders.filter(o => o.status !== 'Batal').reduce((a, o) => a + o.total, 0), cost = orders.filter(o => o.status !== 'Batal').reduce((a, o) => a + o.items.reduce((s, i) => s + i.cost * i.qty, 0), 0), units = {};
+        orders.filter(o => o.status !== 'Batal').forEach(o => o.items.forEach(i => units[i.name] = (units[i.name] || 0) + i.qty));
+        let best = Object.entries(units).sort((a, b) => b[1] - a[1])[0];
+        p.innerHTML = `<div class="stats"><div class="stat"><span>Total transaksi</span><strong>${orders.filter(o => o.status !== 'Batal').length}</strong></div><div class="stat"><span>Total omzet</span><strong>${money(total)}</strong></div><div class="stat"><span>Estimasi modal</span><strong>${money(cost)}</strong></div><div class="stat"><span>Estimasi laba kotor</span><strong>${money(total - cost)}</strong></div></div><div class="panel"><h3>Menu paling banyak dipesan</h3><p>${best ? `🏆 <b>${esc(best[0])}</b> — ${best[1]} gelas` : 'Belum ada transaksi.'}</p><p class="muted">Laporan dihitung dari pesanan yang tidak berstatus Batal. Laba adalah estimasi harga jual dikurangi modal per porsi, belum termasuk biaya operasional lain.</p><button class="btn soft" id="exportCsv">Unduh laporan CSV</button></div>`;
+    }
+    if (adminTab === 'settings') {
+        p.innerHTML = `<div class="panel"><h3>Pengaturan lapak</h3><div class="field"><label>Nama usaha</label><input value="Lapak Bu Lastri" disabled></div><div class="field"><label>Ganti PIN admin</label><input id="newPin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN baru (4–8 angka)"></div><button class="btn primary" id="changePin">Simpan PIN baru</button>
+ <hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><h3>QRIS pembayaran</h3>
+ <p class="muted">Unggah gambar QRIS resmi merchant agar langsung tampil ketika pelanggan memilih QRIS.</p>
+ <div class="field"><label>Gambar QRIS resmi (maks. 2 MB)</label><input id="qrisUpload" type="file" accept="image/*"></div>
+ <img id="qrisSettingPreview" alt="Pratinjau QRIS" style="display:none;width:170px;height:170px;object-fit:contain;border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:12px">
+ <button class="btn soft" id="removeQris">Hapus gambar QRIS</button><hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><h3>Data aplikasi</h3><p class="muted">Data pesanan, menu, dan stok tersimpan di browser/perangkat ini. Bersihkan data browser dapat menghapus catatan lapak.</p><button class="btn soft" id="exportBackup">Unduh cadangan data</button> <button class="btn danger" id="resetData">Reset data demo</button></div>`;
+        if (qrisImage) {
+            setTimeout(() => {
+                const img = $('qrisSettingPreview');
+                if (img) {
+                    img.src = qrisImage;
+                    img.style.display = 'block';
+                }
+            }, 0);
+        }
+    }
+}
+function ordersTable(arr) {
+    if (!arr.length)
+        return '<div class="empty">Belum ada pesanan. Nanti kalau ada yang mampir, pesanannya muncul di sini. 🍊</div>';
+    return `<table class="table"><thead><tr><th>Pesanan</th><th>Pelanggan</th><th>Waktu</th><th>Total</th><th>Status</th><th>Aksi</th></tr></thead><tbody>${arr.map(o => `<tr><td><b>${o.id}</b><br><span class="muted">${o.items.reduce((a, x) => a + x.qty, 0)} item</span></td><td>${esc(o.name)}</td><td>${new Date(o.time).toLocaleString('id-ID')}</td><td><b>${money(o.total)}</b></td><td><span class="status ${o.status === 'Selesai' ? 'selesai' : o.status === 'Batal' ? 'batal' : o.status === 'Diproses' ? 'proses' : ''}">${o.status}</span></td><td><select data-status="${o.id}" aria-label="Ubah status pesanan"><option ${o.status === 'Menunggu' ? 'selected' : ''}>Menunggu</option><option ${o.status === 'Diproses' ? 'selected' : ''}>Diproses</option><option ${o.status === 'Selesai' ? 'selected' : ''}>Selesai</option><option ${o.status === 'Batal' ? 'selected' : ''}>Batal</option></select></td></tr>`).join('')}</tbody></table>`;
+}
+$('adminPanel').addEventListener('click', e => {
+    if (e.target.dataset.goto) {
+        adminTab = e.target.dataset.goto;
+        renderAdmin();
+    }
+    if (e.target.id === 'addProduct')
+        openProduct();
+    if (e.target.dataset.edit)
+        openProduct(Number(e.target.dataset.edit));
+    if (e.target.dataset.stock) {
+        let x = products.find(p => p.id === Number(e.target.dataset.stock)), n = prompt('Tambahkan berapa stok untuk ' + x.name + '?', '10');
+        if (n !== null && Number(n) >= 0) {
+            x.stock += Number(n);
+            save();
+            renderAdmin();
+            toast('Stok berhasil diperbarui');
+        }
+    }
+    if (e.target.dataset.delete) {
+        let x = products.find(p => p.id === Number(e.target.dataset.delete));
+        if (confirm('Hapus ' + x.name + ' dari menu?')) {
+            products = products.filter(p => p.id !== x.id);
+            save();
+            renderAdmin();
+            renderMenu();
+        }
+    }
+    if (e.target.id === 'removeQris') {
+        qrisImage = '';
+        localStorage.removeItem('lastri_qris_image');
+        renderAdmin();
+        toast('Gambar QRIS dihapus.');
+    }
+    if (e.target.id === 'changePin') {
+        let v = $('newPin').value;
+        if (!/^\d{4,8}$/.test(v)) {
+            toast('PIN harus terdiri dari 4–8 angka.');
+            return;
+        }
+        pin = v;
+        save();
+        toast('PIN admin berhasil diganti.');
+        $('newPin').value = '';
+    }
+    if (e.target.id === 'exportCsv')
+        exportCSV();
+    if (e.target.id === 'exportBackup') {
+        download('cadangan-lapak-bu-lastri.json', JSON.stringify({ products, orders, pin, qrisImage }, null, 2), 'application/json');
+    }
+    if (e.target.id === 'resetData' && confirm('Reset semua menu, stok, dan transaksi ke data demo?')) {
+        products = structuredClone(seedProducts);
+        orders = [];
+        cart = {};
+        save();
+        renderAdmin();
+        renderMenu();
+        toast('Data demo sudah direset.');
+    }
+});
+$('adminPanel').addEventListener('change', e => {
+    if (e.target.id === 'qrisUpload' && e.target.files && e.target.files[0]) {
+        const file = e.target.files[0];
+        if (!file.type.startsWith('image/')) {
+            toast('Pilih file gambar QRIS.');
+            return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+            toast('Ukuran gambar maksimal 2 MB.');
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+            qrisImage = reader.result;
+            try {
+                localStorage.setItem('lastri_qris_image', qrisImage);
+                renderAdmin();
+                toast('QRIS resmi berhasil disimpan.');
+            }
+            catch (err) {
+                toast('Penyimpanan penuh. Gunakan gambar yang lebih kecil.');
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+    if (e.target.dataset.status) {
+        let o = orders.find(x => x.id === e.target.dataset.status);
+        if (!o)
+            return;
+        let next = e.target.value;
+        if (next === 'Batal' && o.status !== 'Batal') {
+            o.items.forEach(i => {
+                let p = products.find(x => x.id === i.id);
+                if (p)
+                    p.stock += i.qty;
+            });
+        }
+        if (o.status === 'Batal' && next !== 'Batal') {
+            let can = o.items.every(i => { let p = products.find(x => x.id === i.id); return p && p.stock >= i.qty; });
+            if (!can) {
+                toast('Stok tidak cukup untuk mengaktifkan pesanan ini.');
+                renderAdmin();
+                return;
+            }
+            o.items.forEach(i => products.find(x => x.id === i.id).stock -= i.qty);
+        }
+        o.status = next;
+        save();
+        renderAdmin();
+        renderMenu();
+        toast('Status pesanan diperbarui.');
+    }
+});
+$('adminPanel').addEventListener('input', e => {
+    if (e.target.id === 'orderSearch') {
+        $('ordersTable').innerHTML = ordersTable(orders.filter(o => (o.name + ' ' + o.id).toLowerCase().includes(e.target.value.toLowerCase())));
+    }
+});
+function openProduct(id) { let x = products.find(p => p.id === id); $('productDialogTitle').textContent = x ? 'Edit menu' : 'Tambah menu'; $('editProductId').value = x?.id || ''; $('pName').value = x?.name || ''; $('pCategory').value = x?.category || 'Buah'; $('pEmoji').value = x?.emoji || '🍹'; $('pDesc').value = x?.desc || ''; $('pPrice').value = x?.price || ''; $('pCost').value = x?.cost || ''; $('pStock').value = x?.stock ?? 10; openDialog('productDialog'); }
+$('saveProduct').onclick = () => {
+    let name = $('pName').value.trim(), price = Number($('pPrice').value), cost = Number($('pCost').value), stock = Number($('pStock').value), id = Number($('editProductId').value);
+    if (!name || price < 0 || cost < 0 || stock < 0 || !Number.isFinite(price) || !Number.isFinite(cost) || !Number.isFinite(stock)) {
+        toast('Periksa kembali data menu, ya.');
+        return;
+    }
+    let data = { id: id || Date.now(), name, category: $('pCategory').value, emoji: $('pEmoji').value || '🍹', desc: $('pDesc').value.trim(), price, cost, stock };
+    if (id)
+        products = products.map(p => p.id === id ? data : p);
+    else
+        products.push(data);
+    save();
+    closeDialog('productDialog');
+    renderAdmin();
+    renderMenu();
+    toast('Menu berhasil disimpan.');
+};
+function download(name, content, type) { let a = document.createElement('a'), url = URL.createObjectURL(new Blob([content], { type })); a.href = url; a.download = name; a.click(); URL.revokeObjectURL(url); }
+function exportCSV() { let rows = [['Nomor', 'Nama', 'Tanggal', 'Menu', 'Jumlah', 'Total', 'Pembayaran', 'Status'], ...orders.flatMap(o => o.items.map(i => [o.id, o.name, new Date(o.time).toLocaleString('id-ID'), i.name, i.qty, i.price * i.qty, o.payment, o.status]))]; let csv = rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')).join('\n'); download('laporan-lapak-bu-lastri.csv', '\ufeff' + csv, 'text/csv;charset=utf-8'); }
+renderMenu();
+updateCart();
+save();
+  </script>
+ </body>
+</html>
